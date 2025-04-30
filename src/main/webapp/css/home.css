@@ -1,0 +1,418 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	background-color: #0b0b1a;
+	color: white;
+}
+
+
+
+/* Hero section */
+.hero {
+	position: relative;
+	height: 880px;
+	overflow: hidden;
+}
+
+.hero-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.hero-content {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	z-index: 2;
+}
+
+.hero-title {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+	font-size: 1.2rem;
+	color: white;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.watch-btn {
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.play-icon {
+	margin-right: 10px;
+}
+
+/* News grid */
+.news-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 60px;
+}
+
+.news-item {
+	position: relative;
+	height: 390px;
+	width: 390px;
+	overflow: hidden;
+	border-radius: 5px;
+	transition: transform 0.7s ease;
+}
+
+.news-item:hover {
+	transform: scale(1.03);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.news-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.news-item:hover .news-img {
+	filter: brightness(1.1);
+}
+
+.news-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+	padding: 15px;
+	transition: background 0.3s ease;
+}
+
+.news-item:hover .news-overlay {
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.news-title {
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.news-time {
+	font-size: 0.8rem;
+	color: #ccc;
+}
+
+/* Players section */
+.players-section {
+	padding: 40px 20px;
+	position: relative;
+}
+
+.section-title {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	margin-bottom: 30px;
+}
+
+.players-carousel {
+	display: flex;
+	overflow: hidden;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.player-card {
+	flex: 0 0 33.33%;
+	padding: 10px;
+	transition: transform 0.3s ease;
+	position: relative;
+	cursor: pointer;
+}
+
+.player-img-container {
+	position: relative;
+	height: 550px;
+	background: linear-gradient(135deg, #a50044 0%, #004d98 100%);
+	border-radius: 5px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.player-card:hover .player-img-container {
+	filter: brightness(0.8);
+}
+
+.player-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.player-info {
+	text-align: center;
+	padding: 15px 0;
+}
+
+.player-name {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.player-position {
+	color: #ccc;
+	margin-top: 5px;
+}
+
+.player-value {
+	color: #a50044;
+	font-weight: bold;
+	margin-top: 5px;
+	font-size: 1.2rem;
+}
+
+.player-stats-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 15px;
+	transform: translateY(100%);
+	transition: transform 0.3s ease;
+	color: white;
+}
+
+.player-card:hover .player-stats-overlay {
+	transform: translateY(0);
+}
+
+.stats-row {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.stat-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.stat-value {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.stat-label {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+}
+
+.season-info {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.8rem;
+	margin-top: 10px;
+}
+
+.carousel-nav {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+	z-index: 5;
+}
+
+.nav-btn {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: white;
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Trophies section - repurposed as stats section */
+.trophies-section {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: #121229;
+}
+
+.trophy-item {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	background: linear-gradient(90deg, #a50044 0%, #004d98 100%);
+	margin: 0 5px;
+	border-radius: 5px;
+}
+
+.trophy-icon {
+	color: gold;
+	font-size: 2rem;
+	margin-right: 10px;
+}
+
+.trophy-info {
+	flex-grow: 1;
+}
+
+.trophy-count {
+	font-size: 2rem;
+	font-weight: bold;
+	color: gold;
+}
+
+.trophy-name {
+	font-size: 0.9rem;
+	color: white;
+}
+
+/* Club logo divider */
+.club-logo-divider {
+	display: flex;
+	justify-content: center;
+	padding: 30px 0;
+	background: linear-gradient(90deg, #004d98 0%, #a50044 100%);
+}
+
+.club-year-logo {
+	width: 500px;
+	height: 500px;
+}
+
+
+
+/* Social media section */
+.social-section {
+	padding: 20px;
+	text-align: center;
+}
+
+.social-title {
+	color: #ccc;
+	margin-bottom: 20px;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 40px;
+}
+
+.social-icon {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+.facebook {
+	background-color: #3b5998;
+}
+
+.twitter {
+	background-color: #1da1f2;
+}
+
+.youtube {
+	background-color: #ff0000;
+}
+
+.instagram {
+	background-color: #c32aa3;
+}
+
+.tiktok {
+	background-color: #000000;
+}
+
+.spotify {
+	background-color: #1db954;
+}
+
+.discord {
+	background-color: #5865f2;
+}
+
+
+/* Additional buttons and features */
+.action-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 30px;
+}
+
+.action-btn {
+	background-color: #004d98;
+	color: white;
+	border: none;
+	padding: 12px 25px;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+	background-color: #003b75;
+}
+
+.premium-btn {
+	background-color: #a50044;
+}
+
+.premium-btn:hover {
+	background-color: #8a0039;
+}
+
+.register-btn {
+	background-color: #2e8b57;
+}
+
+.register-btn:hover {
+	background-color: #247548;
+}

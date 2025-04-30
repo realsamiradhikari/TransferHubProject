@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	background-color: #1A2526;
+	color: #FFFFFF;
+}
+
+/* Header with Logo and Title */
+.header {
+	background: linear-gradient(90deg, #004D98, #A50044);
+	padding: 15px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header img {
+	height: 50px;
+}
+
+.header h1 {
+	font-size: 24px;
+}
+
+.header .admin-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.header .admin-info .avatar {
+	background-color: #A50044;
+	color: #FFFFFF;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+/* Layout */
+.container {
+	display: flex;
+	height: calc(100vh - 80px);
+}
+
+/* Navigation Bar */
+.navbar {
+	width: 300px;
+	background-color: #0F1A1C;
+	padding: 20px;
+	border-right: 2px solid #A50044;
+}
+
+.navbar ul {
+	list-style: none;
+}
+
+.navbar ul li {
+	margin-bottom: 20px;
+}
+
+.navbar ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+	background-color: #A50044;
+}
+
+.navbar ul li a.active {
+	background-color: #004D98;
+}
+
+/* Logout Button */
+.navbar .logout-form {
+	margin-top: 20px;
+}
+
+.navbar .logout-form button {
+	width: 100%;
+	padding: 10px;
+	background-color: #A50044;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.navbar .logout-form button:hover {
+	background-color: #8B0037;
+}
+
+/* Main Content */
+.main-content {
+	flex: 1;
+	padding: 20px;
+	overflow-y: auto;
+}
+
+.main-content h2 {
+	margin-bottom: 20px;
+	color: #FFFFFF;
+}
+
+/* Table Styling */
+.player-table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #2A3439;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.player-table th, .player-table td {
+	padding: 12px 15px;
+	text-align: left;
+}
+
+.player-table th {
+	background-color: #004D98;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.player-table td {
+	color: #D3D3D3;
+}
+
+.player-table tr:nth-child(even) {
+	background-color: #1F292A;
+}
+
+.player-table .actions a {
+	margin-right: 10px;
+	text-decoration: none;
+	color: #A50044;
+}
+
+.player-table .actions a:hover {
+	color: #FFFFFF;
+}
+
+/* Add New Button */
+.add-new-btn {
+	background-color: #004D98;
+	color: #FFFFFF;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.add-new-btn:hover {
+	background-color: #003A6F;
+}
+
+/* Form Styling */
+.player-form-container {
+	display: none;
+	background-color: #2A3439;
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.player-form-container.active {
+	display: block;
+}
+
+.player-form {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+}
+
+.player-form label {
+	display: block;
+	margin-bottom: 5px;
+	color: #D3D3D3;
+	font-size: 14px;
+}
+
+.player-form input, .player-form select {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #A50044;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-size: 14px;
+}
+
+.player-form select {
+	appearance: none;
+	background:
+		url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><polygon points="0,0 12,0 6,6" fill="%23A50044"/></svg>')
+		no-repeat right 10px center;
+	background-size: 10px;
+}
+
+.player-form input:focus, .player-form select:focus {
+	outline: none;
+	border-color: #004D98;
+}
+
+.player-form button {
+	grid-column: span 4;
+	padding: 10px;
+	background-color: #A50044;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.player-form button:hover {
+	background-color: #8B0037;
+}
