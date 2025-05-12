@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	background-color: #1A2526;
+	color: #FFFFFF;
+}
+
+.header {
+	background: linear-gradient(90deg, #004D98, #A50044);
+	padding: 15px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.header img {
+	height: 50px;
+}
+
+.header h1 {
+	font-size: 24px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.header .club-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.header .club-info .avatar {
+	background-color: #A50044;
+	color: #FFFFFF;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+.container {
+	display: flex;
+	height: calc(100vh - 80px);
+}
+
+.navbar {
+	width: 300px;
+	background-color: #0F1A1C;
+	padding: 20px;
+	border-right: 2px solid #A50044;
+}
+
+.navbar ul {
+	list-style: none;
+}
+
+.navbar ul li {
+	margin-bottom: 20px;
+}
+
+.navbar ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+	background-color: #A50044;
+}
+
+.navbar ul li a.active {
+	background-color: #004D98;
+}
+
+.navbar .logout-form {
+	margin-top: 20px;
+}
+
+.navbar .logout-form button {
+	width: 100%;
+	padding: 10px;
+	background-color: #A50044;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.navbar .logout-form button:hover {
+	background-color: #8B0037;
+}
+
+.main-content {
+	flex: 1;
+	padding: 20px;
+}
+
+.main-content h2 {
+	margin-bottom: 20px;
+	color: #FFFFFF;
+}
+
+table {
+	width: 50%;
+	border-collapse: collapse;
+	background-color: #2A3439;
+	border-radius: 5px;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #444;
+}
+
+th {
+	background-color: #004D98;
+	color: #FFFFFF;
+}
+
+tr:nth-child(even) {
+	background-color: #1F292A;
+}
+
+.update-form {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.update-form input[type="text"] {
+	padding: 10px;
+	width: 300px;
+	border: none;
+	border-radius: 5px;
+	background-color: #2A3439;
+	color: #FFFFFF;
+}
+
+.update-form button {
+	padding: 10px 20px;
+	background-color: #004D98;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.update-form button:hover {
+	background-color: #003A6F;
+}

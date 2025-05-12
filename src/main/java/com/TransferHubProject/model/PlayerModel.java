@@ -9,6 +9,7 @@ public class PlayerModel {
     private double marketValue;
     private int contractDuration;
     private int gAContributions;
+    private int clubId;
 
     // Constructor
     public PlayerModel(int playerId, String playerName, String position, String nationality, 
@@ -27,6 +28,7 @@ public class PlayerModel {
     public int getPlayerId() {
         return playerId;
     }
+    
 
     public String getPlayerName() {
         return playerName;
@@ -54,6 +56,13 @@ public class PlayerModel {
 
     public int getGAContributions() {
         return gAContributions;
+    }
+    public int getClubId() {
+        return clubId;
+    }
+
+    public void setClubId(int clubId) {
+        this.clubId = clubId;
     }
 
     // Setters

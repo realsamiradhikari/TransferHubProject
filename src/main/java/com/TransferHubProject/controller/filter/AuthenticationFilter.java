@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * Servlet Filter implementation class AuthenticationFilter
  */
-@WebFilter(urlPatterns = { "/dashboard", "/admindashboard", "/admindashboardclubs", "/admindashboardplayers" })
+@WebFilter(urlPatterns = { "/dashboard", "/admindashboard", "/admindashboardclubs", "/admindashboardplayers", "/dashboardplayers" })
 public class AuthenticationFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -40,17 +40,18 @@ public class AuthenticationFilter implements Filter {
         boolean isAdminUrl = uri.equals(contextPath + "/admindashboard") ||
                              uri.equals(contextPath + "/admindashboardclubs") ||
                              uri.equals(contextPath + "/admindashboardplayers");
-        boolean isUserUrl = uri.equals(contextPath + "/dashboard");
+        boolean isUserUrl = uri.equals(contextPath + "/dashboard") ||
+                            uri.equals(contextPath + "/dashboardplayers");
 
         // Admin access control
         if ("admin".equals(username)) {
             if (isUserUrl) {
-                // Admin cannot access /dashboard
+                // Admin cannot access user URLs like /dashboard or /dashboardplayers
                 httpResponse.sendRedirect(contextPath + "/admindashboard");
                 return;
             }
         } else {
-            // Non-admin users cannot access admin URLs
+            // Non-admin users (clubs) cannot access admin URLs
             if (isAdminUrl) {
                 httpResponse.sendRedirect(contextPath + "/dashboard");
                 return;
