@@ -12,29 +12,38 @@ import java.io.IOException;
  */
 @WebServlet("/")
 public class HomeController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    private static final long serialVersionUID = 1L;
+
     public HomeController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/Pages/Home.jsp").forward(request, response);
-	}
+    /**
+     * Handles HTTP GET requests.
+     * Takes the request and forwards it to the Home.jsp file for display.
+     * 
+     * @param request The HttpServletRequest object representing the request.
+     * @param response The HttpServletResponse object representing the response.
+     * @throws ServletException If the servlet encounters a ServletException.
+     * @throws IOException If an I/O error occurs while processing the request.
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Forward the request to Home.jsp page to show the home page
+    	request.getRequestDispatcher("WEB-INF/pages/Home.jsp").forward(request, response);
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+    /**
+     * Handles HTTP POST requests.
+     * Takes the request and passes it to doGet method for processing.
+     * 
+     * @param request The HttpServletRequest object representing the request.
+     * @param response The HttpServletResponse object representing the response.
+     * @throws ServletException If the servlet encounters a ServletException.
+     * @throws IOException If an I/O error occurs while processing the request.
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

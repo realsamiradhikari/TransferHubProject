@@ -23,19 +23,39 @@ public class DashboardController extends HttpServlet {
     }
 
 	/**
+	 * Handles HTTP GET requests.
+	 * Takes the request and forwards it to the dashboard.jsp file for display.
+	 * 
+	 * @param request The HttpServletRequest object representing the request.
+	 * @param response The HttpServletResponse object representing the response.
+	 * @throws ServletException If the servlet encounters a ServletException.
+	 * @throws IOException If an I/O error occurs while processing the request.
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/Pages/Club/dashboard.jsp").forward(request, response);
+		// Forward the request to dashboard.jsp page to show the club dashboard
+		request.getRequestDispatcher("WEB-INF/pages/club/dashboard.jsp").forward(request, response);
 	}
 
 	/**
+	 * Handles HTTP POST requests.
+	 * Takes the request and passes it to doGet method for processing.
+	 * 
+	 * @param request The HttpServletRequest object representing the request.
+	 * @param response The HttpServletResponse object representing the response.
+	 * @throws ServletException If the servlet encounters a ServletException.
+	 * @throws IOException If an I/O error occurs while processing the request.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// Pass the POST request to doGet to handle it
 		doGet(request, response);
 	}
-
 }
+
+
+
+
+
+

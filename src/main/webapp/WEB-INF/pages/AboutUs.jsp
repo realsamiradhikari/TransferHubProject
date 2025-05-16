@@ -18,7 +18,7 @@
         <div class="diagonal-stripe diagonal-stripe-2"></div>
         <div class="about-section">
             <div class="about-image">
-                <img src="${pageContext.request.contextPath}/resources/Homeimages/" alt="TransferHub Team">
+                <img src="${pageContext.request.contextPath}/resources/Homeimages/logo.png" alt="TransferHub Team">
             </div>
             <div class="about-content">
                 <div class="about-badge">About TransferHub</div>

@@ -16,10 +16,23 @@ import com.TransferHubProject.config.DBConfig;
 public class AdminDashboardController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public AdminDashboardController() {
         super();
     }
 
+    /**
+     * Handles HTTP GET requests.
+     * Fetches the total number of clubs and players from the database and displays them on the admin dashboard.
+     * 
+     * @param request The HttpServletRequest object representing the request.
+     * @param response The HttpServletResponse object representing the response.
+     * @throws ServletException If the servlet encounters a ServletException.
+     * @throws IOException If an I/O error occurs while processing the request.
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         int totalClubs = 0;
@@ -30,6 +43,7 @@ public class AdminDashboardController extends HttpServlet {
              PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM club_registration");
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {
+                // Retrieve the total count of clubs from the result set
                 totalClubs = rs.getInt(1);
             }
         } catch (SQLException e) {
@@ -41,6 +55,7 @@ public class AdminDashboardController extends HttpServlet {
              PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM player_details");
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {
+                // Retrieve the total count of players from the result set
                 totalPlayers = rs.getInt(1);
             }
         } catch (SQLException e) {
@@ -51,11 +66,23 @@ public class AdminDashboardController extends HttpServlet {
         request.setAttribute("totalClubs", totalClubs);
         request.setAttribute("totalPlayers", totalPlayers);
 
-        request.getRequestDispatcher("WEB-INF/Pages/admin/adminDashboard.jsp").forward(request, response);
+        // Forward the request to adminDashboard.jsp to display the admin dashboard
+        request.getRequestDispatcher("WEB-INF/pages/admin/adminDashboard.jsp").forward(request, response);
     }
 
+    /**
+     * Handles HTTP POST requests.
+     * Takes the request and passes it to doGet method for processing.
+     * 
+     * @param request The HttpServletRequest object representing the request.
+     * @param response The HttpServletResponse object representing the response.
+     * @throws ServletException If the servlet encounters a ServletException.
+     * @throws IOException If an I/O error occurs while processing the request.
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        // Pass the POST request to doGet to handle it
         doGet(request, response);
     }
 }
